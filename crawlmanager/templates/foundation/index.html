@@ -8,7 +8,9 @@
 {% load filter_tag %}
 <div>{{ settings }}</div>
 
-<script src="http://oivg4ppds.bkt.clouddn.com/javascript/jquery-3.1.1/jquery-3.1.1.min.js"></script>
+{% csrf_token %}
+
+<script src="{% get_settings 'QINIU_SOURCE_URL' %}/javascript/jquery-3.1.1/jquery-3.1.1.min.js"></script>
 <script>
     function getCookie(name) {
         var cookieValue = null;
