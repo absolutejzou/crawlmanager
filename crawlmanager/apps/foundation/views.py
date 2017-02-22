@@ -1,12 +1,17 @@
-from django.http import HttpResponse
-from django.shortcuts import render
 
-from rest_framework.views import View
+from crawlmanager.utils.handler import BaseHandler
 
 
-class Home(View):
-    def get(self, request):
-        return render(request, 'foundation/index.html', {'title': 'haha'})
+class Home(BaseHandler):
+    def get(self):
+        return self.render_to_response('foundation/index.html',
+                                       {'title': 'haha'})
 
-    def post(self, request):
-        return HttpResponse('hello world!')
+    def post(self):
+        return self.response_ok()
+
+
+class Test(BaseHandler):
+    def get(self, id):
+        print(id)
+        return self.response_ok({'id': id})
