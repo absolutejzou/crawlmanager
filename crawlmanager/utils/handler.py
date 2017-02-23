@@ -27,7 +27,6 @@ class BaseHandler(View):
         return render(self.request, view_url, kwargs)
 
     def _response(self, *args, **kwargs):
-        print(kwargs)
         return HttpResponse(status=self._status_code,
                             *args, **kwargs)
 

@@ -13,5 +13,4 @@ class Home(BaseHandler):
 
 class Test(BaseHandler):
     def get(self, id):
-        print(id)
         return self.response_ok({'id': id})
