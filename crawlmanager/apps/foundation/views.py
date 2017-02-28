@@ -1,5 +1,7 @@
-
+from crawlmanager.apps.foundation.models import User
 from crawlmanager.utils.handler import BaseHandler
+
+from django.views import generic
 
 
 class Home(BaseHandler):
@@ -8,7 +10,7 @@ class Home(BaseHandler):
                                        {'title': 'haha'})
 
     def post(self):
-        return self.response_ok()
+        return self.response({})
 
 
 class Test(BaseHandler):
