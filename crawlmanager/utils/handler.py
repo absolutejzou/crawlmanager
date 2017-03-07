@@ -3,6 +3,7 @@ import json
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.views import View
+from rest_framework.views import APIView
 
 
 def utf8(value):
@@ -11,17 +12,8 @@ def utf8(value):
     return value.encode('utf-8')
 
 
-class BaseHandler(View):
+class BaseView(APIView):
     _status_code = 200
-
-    def dispatch(self, request, *args, **kwargs):
-        if request.method.lower() in self.http_method_names:
-            handler = getattr(self, request.method.lower(),
-                              self.http_method_not_allowed)
-        else:
-            handler = self.http_method_not_allowed
-        return handler(*args, **kwargs)
-
     @property
     def remote_ip(self):
         return self.request.META.get('REMOTE_ADDR', 'unknown')
