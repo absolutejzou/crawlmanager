@@ -1,0 +1,62 @@
+{% extends 'layout_2.html' %}
+{% block title %}login html{% endblock %}
+
+{% load filter_tag %}
+
+{% block app_styles %}
+<link rel="stylesheet" type="text/css" href="static/common/css/common.css"/>
+{% endblock %}
+
+{% block page_styles %}
+<style>
+html, body, .container, .container > div {
+    height: 100%;
+}
+.container > div {
+    margin-bottom: 0;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="row valign-wrapper">
+<div class="valign col s12">
+    <div class="col s10 offset-s1 m6 offset-m3 l4 offset-l4">
+        <div class="card z-depth-5">
+            <div class="card-content">
+                <span class="card-title center-align">登录</span>
+                <div class="row">
+                    <form class="col s12" method="POST">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input id="name" name="name" type="text" class="validate">
+                                <label for="name">用户</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">lock_outline</i>
+                                <input id="password" name="password" type="password" class="validate">
+                                <label for="password">密码</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12">
+                                <button type="submit" class="waves-effect waves-light btn green lighten-1 col s8 offset-s2">提交</button>
+                            </div>
+                        </div>
+                        {% csrf_token %}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}
+
+{% block page_scripts %}
+<script src="{% get_settings 'QINIU_SOURCE_URL' %}/jquery-validation-1.15.0/jquery.validate.min.js"></script>
+<script src="static/foundation/javascript/login.js"></script>
+{% endblock %}

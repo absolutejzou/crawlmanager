@@ -30,7 +30,8 @@ SECRET_KEY = '9jc_j1g6#1ivu^2hu=rij@by9(z09xt$k#=b+75s9_46!3ww0k'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+BASE_ALLOWED_HOSTS = get_env_variable('HOSTS_ALLOWED_HOSTS')
+ALLOWED_HOSTS = [h.strip() for h in BASE_ALLOWED_HOSTS.split(',')] if BASE_ALLOWED_HOSTS else []
 
 
 # Application definition
@@ -64,7 +65,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join(PROJECT_DIR, 'websites/templates')]
         ,
-        'APP_DIRS': True,
+        'APP_DIRS': False,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -137,3 +138,10 @@ STATICFILES_DIRS = [
 ]
 
 QINIU_SOURCE_URL = 'http://oivg4ppds.bkt.clouddn.com'
+
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+    )
+}
+
