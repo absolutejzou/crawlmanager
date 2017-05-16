@@ -16,8 +16,11 @@ Including another URLconf
 from django.conf.urls import url, include
 
 from django.contrib import admin
+from crawlmanager.apps.foundation.views import page_not_found
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'', include('crawlmanager.apps.foundation.urls')),
+
+    url(r'.*', page_not_found, name='not_found'),
 ]

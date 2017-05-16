@@ -34,4 +34,17 @@ $(function () {
             }
         }
     });
+
+
+    $("form").submit(function() {
+        $.post(
+            window.location.href,
+            $(this).serialize()
+        ).done(function(data) {
+            console.log('ok');
+        }).fail(function(jqXHR) {
+            console.log('failed');
+        });
+        return false;
+    });
 });

@@ -1,0 +1,3 @@
+
+USER_OR_PASSWORD_ERROR = "用户名或密码错误"
+USER_NOT_ACTIVE = "用户不可用"
