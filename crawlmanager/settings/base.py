@@ -56,6 +56,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'crawlmanager.utils.middlewares.AjaxRedirect',
+    'crawlmanager.utils.middlewares.ErrorHandler',
 ]
 
 ROOT_URLCONF = 'crawlmanager.urls'
@@ -140,4 +141,3 @@ STATICFILES_DIRS = [
 QINIU_SOURCE_URL = 'http://oivg4ppds.bkt.clouddn.com'
 
 LOGIN_URL = '/login'
-

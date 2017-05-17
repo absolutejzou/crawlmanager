@@ -10,3 +10,16 @@
     -o-transform: translateY(0%);
     transform: translateY(0%);
 }
+
+.success {
+    background-color: white;
+    font-weight: bold;
+    color: #2e7d32;
+}
+
+.failed {
+    background-color: white;
+    font-weight: bold;
+    color: #c62828;
+}
+

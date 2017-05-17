@@ -39,4 +39,4 @@ def sign_in(request):
 
 def sign_out(request):
     logout(request)
-    return response({'ok': True})
+    return HttpResponseRedirect(request.GET.get(REDIRECT_FIELD_NAME, '/'))

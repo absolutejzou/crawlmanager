@@ -41,9 +41,9 @@ $(function () {
             window.location.href,
             $(this).serialize()
         ).done(function(data) {
-            console.log('ok');
+            Materialize.toast('登录成功', 4000, 'success')
         }).fail(function(jqXHR) {
-            console.log('failed');
+            Materialize.toast(jqXHR.responseJSON.result, 4000, 'failed')
         });
         return false;
     });
