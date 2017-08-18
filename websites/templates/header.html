@@ -1,46 +1,62 @@
 <header>
     <ul id="side-menu" class="side-nav fixed">
-        <li><a href="#!">图片</a></li>
-        <li><a href="#!">First Sidebar Link</a></li>
-        <li><a href="#!">Second Sidebar Link</a></li>
-        <li class="no-padding">
-            <ul class="collapsible">
-                <li>
-                    <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
-                </li>
-                <li>
-                    <div class="collapsible-header"><i class="material-icons">filter_drama</i>Second</div>
-                </li>
-                <li>
-                    <div class="collapsible-header"><i class="material-icons">filter_drama</i>Third</div>
-                </li>
-            </ul>
-        </li>
+{#        <li><a class="menu_header valign-wrapper center-align" href="/">个人信息收集系统</a></li>#}
+        <li><div class="menu_header valign-wrapper"><h5 class="center-align">爬虫管理</h5></div></li>
+        <ul class="collapsible" data-collapsible="accordion">
+{#            <li>#}
+{#                <div class="collapsible-header"><a href="#"><i class="material-icons">people</i>用户</a></div>#}
+{#            </li>#}
+            <li>
+                <div class="collapsible-header waves-effect waves-purple"><i class="material-icons">bug_report</i>爬虫</div>
+                <div class="collapsible-body">
+                    <div class="collection">
+                        <a href="#!" class="collection-item waves-effect waves-purple">快代理</a>
+                        <a href="#!" class="collection-item waves-effect waves-purple">西祠代理</a>
+                        <a href="#!" class="collection-item waves-effect waves-purple">ip181</a>
+                        <a href="#!" class="collection-item waves-effect waves-purple">网易云音乐</a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="collapsible-header waves-effect waves-purple"><i class="material-icons">storage</i>数据</div>
+                <div class="collapsible-body">
+                    <div class="collection">
+                        <a href="#!" class="collection-item waves-effect waves-purple">代理</a>
+                        <a href="#!" class="collection-item waves-effect waves-purple">网易云音乐</a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="collapsible-header waves-effect waves-purple"><i class="material-icons">settings</i>设置</div>
+                <div class="collapsible-body">
+                    <div class="collection">
+                        <a href="#!" class="collection-item waves-effect waves-purple">用户</a>
+                        <a href="#!" class="collection-item waves-effect waves-purple">权限</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
     </ul>
 
     <nav>
         <div class="container">
             <a id='side-button' href="#" data-activates="side-menu" class="button-collapse top-nav full hide-on-large-only">
-                <i class="material-icons">menu</i>
+                <i class="material-icons">adjust</i>
             </a>
         </div>
 
         <div class="nav-wrapper">
             <ul class="right hide-on-med-and-down">
-                <li><a href="#">Sass</a></li>
                 <li><a href="#">消息</a></li>
-                <li><a class="dropdown-button" href="#" data-activates='dropdown_profile'>个人信息</a></li>
+                <li><a class="dropdown-button" href="#" data-activates='dropdown_content'><i class="material-icons">account_circle</i></a></li>
             </ul>
-            <div class="hide-on-large-only">logo</div>
+            <a href="#" class="brand-logo hide-on-large-only">LOGO</a>
         </div>
     </nav>
 
-    <ul id='dropdown_profile' class='dropdown-content'>
-        <li><a href="#!">one</a></li>
-        <li><a href="#!">two</a></li>
+    <ul id='dropdown_content' class='dropdown-content'>
+        <li><a href="#!">个人资料</a></li>
         <li class="divider"></li>
-        <li><a href="#!">three</a></li>
-        <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
-        <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+        <li><a href="/logout">退出</a></li>
     </ul>
 </header>

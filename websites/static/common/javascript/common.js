@@ -11,7 +11,7 @@ $(function() {
     $('.dropdown-button').dropdown({
         inDuration: 300,
         outDuration: 225,
-        constrainWidth: true,
+        constrainWidth: false,
         hover: false,
         gutter: 0,
         belowOrigin: true,

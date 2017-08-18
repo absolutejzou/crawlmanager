@@ -25,4 +25,57 @@
 
 #side-menu {
     width: 220px;
+    /*background-color: #99CC33;*/
+}
+
+.menu_header {
+    font-size: 20px !important;
+    color: #ffab40 !important;
+    height: 100px !important;
+    padding: 0 !important;
+}
+
+.menu_header > h5 {
+    width: 100%;
+}
+
+#side-menu .collapsible-body, #side-menu .collapsible-header > a {
+    padding: 0;
+}
+
+#side-menu .collapsible-header > a:hover {
+    background-color: transparent;
+}
+
+header .collection-item {
+    background-color: transparent !important;
+    padding-left: 60px !important;
+    font-size: 12px;
+}
+
+header > nav , .collection .collection-item.active {
+    background-color: #1976d2 !important;
+}
+
+.collection a.collection-item, #dropdown_content a {
+    color: black;
+}
+
+header .collection {
+    background-color: #eeeeee ;
+}
+
+
+@media screen and (min-width: 992px){
+    main, header > nav {
+        padding-left: 220px;
+    }
+
+    .nav-wrapper {
+        padding-left: 10px;
+    }
+
+    .dropdown-content {
+        width: auto !important;
+    }
 }
